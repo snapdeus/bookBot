@@ -15,9 +15,13 @@ the sendChapters function is export to app.book.js, the main file, which uses no
 An example of my config file is:
 
 {
-    "BOT_TOKEN": "YOUR BOTEN TOKEN",
+
+    "BOT_TOKEN": "YOUR BOT TOKEN",
+
     "BOOK_CHANNEL": "YOUR BOOKCLUB CHANNEL",
+
     "GUILD_ID": "YOUR GUILD ID"
+    
 }
 
 I use two config files, one for dev and one for prod. You do not have to do this and can remove the if statement for the config if you so desire in both sendChapters.js and app.book.js
