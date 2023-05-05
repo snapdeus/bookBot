@@ -48,7 +48,7 @@ client.on('ready', () => {
     console.log(`${ client.user.tag } logged in`);
     const channel = client.channels.cache.get(config.BOOK_CHANNEL);
 
-    cron.schedule('30 15 * * *', () => {
+    cron.schedule('30 19 * * *', () => {
         sendChapters(channel);
     });
 
