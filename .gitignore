@@ -1,3 +1,7 @@
 .env
 node_modules/
 config/
+cloudsplitter.txt
+output.txt
+output.json
+json.sqlite
