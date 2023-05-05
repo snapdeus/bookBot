@@ -24,7 +24,7 @@ module.exports.sendChapters = async (channel) => {
 
         let lastMessageId = await db.get('lastMessageId');
         if (lastMessageId) {
-            channel.send(`**LAST BOOKMARK**\n https://discord.com/channels/${ config.GUILD_ID }/${ config.BOOK_CHANNEL }/${ lastMessageId }\n *NOW READING PART ${ startingIndex / 5 }/172*`);
+            channel.send(`**LAST BOOKMARK:**\n https://discord.com/channels/${ config.GUILD_ID }/${ config.BOOK_CHANNEL }/${ lastMessageId }\n *NOW READING PART ${ startingIndex / 5 }/172*`);
         } else {
             channel.send(`Now reading part ${ startingIndex / 5 }/172`);
         }
@@ -34,14 +34,12 @@ module.exports.sendChapters = async (channel) => {
             const promise = await channel.send("||" + book[i] + "||")
                 .then(sent => {
                     let id = sent.id;
-                    console.log(i, id);
                     IdArray.push(id);
                 });
             promises.push(promise);
         }
         await Promise.all(promises);
 
-        console.log(IdArray);
         const lastMessageIdFromArray = IdArray[0];
         await db.set('lastMessageId', lastMessageIdFromArray);
         await db.set('startingIndex', startingIndex + 5);

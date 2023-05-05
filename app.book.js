@@ -48,8 +48,7 @@ client.on('ready', () => {
     console.log(`${ client.user.tag } logged in`);
     const channel = client.channels.cache.get(config.BOOK_CHANNEL);
 
-    sendChapters(channel);
-    cron.schedule('* * * * *', () => {
+    cron.schedule('30 15 * * *', () => {
         sendChapters(channel);
     });
 
@@ -57,7 +56,7 @@ client.on('ready', () => {
 
 });
 
-
+//IF I WANT TO ADD COMMANDS LATER...
 // client.on('messageCreate', message => {
 //     if (!message.content.startsWith(prefix) || message.author.bot) return;
 //     const args = message.content.slice(prefix.length).trim().split(' ');
@@ -71,9 +70,6 @@ client.on('ready', () => {
 //         message.reply('there was an error trying to execute that command!');
 //     }
 // });
-
-
-
 
 
 process.on("uncaughtException", (err, origin,) => {

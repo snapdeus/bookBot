@@ -1,13 +1,13 @@
-const Discord = require("discord.js");
-const { AttachmentBuilder, EmbedBuilder } = require('discord.js');
-const text = require('../output.json');
+// const Discord = require("discord.js");
+// const { AttachmentBuilder, EmbedBuilder } = require('discord.js');
+// const text = require('../output.json');
 
-module.exports = {
-    name: "test",
-    usage: 'test',
+// module.exports = {
+//     name: "test",
+//     usage: 'test',
 
     // Execute contains content for the command
-    async execute(client, message, args) {
+    // async execute(client, message, args) {
 
 
         // const embed = new EmbedBuilder()
@@ -18,9 +18,9 @@ module.exports = {
         // message.channel.send({ embeds: [embed] });
 
 
-        const text1 = text[1].replace(/\\r\\n|\\r|\\n/g, '\n');
-        console.log(text1.length);
-        message.channel.send(`${ text1 }`);
+//         const text1 = text[1].replace(/\\r\\n|\\r|\\n/g, '\n');
+//         console.log(text1.length);
+//         message.channel.send(`${ text1 }`);
 
-    }
-};
+//     }
+// };
