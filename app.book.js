@@ -17,6 +17,7 @@ if (process.env.NODE_ENV?.trim() === 'development') {
 
 
 
+
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -48,8 +49,9 @@ client.on('ready', () => {
     console.log(`${ client.user.tag } logged in`);
     const channel = client.channels.cache.get(config.BOOK_CHANNEL);
 
+    sendChapters(channel, config.CLOUDSPLITTER)
     cron.schedule('30 19 * * *', () => {
-        sendChapters(channel);
+        sendChapters(channel, config.CLOUDSPLITTER);
     });
 
 
