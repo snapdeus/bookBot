@@ -1,6 +1,15 @@
 const fs = require('fs');
-const infile = 'cloudsplitter.txt';
-const outfile = 'output.json';
+let config;
+if (process.env.NODE_ENV?.trim() === 'development') {
+    config = require('./config/config.test.json');
+} else {
+    config = require('./config/config.json');
+}
+
+const bookName = config.CLOUDSPLITTER
+
+const infile = `${ bookName }.txt`;
+const outfile = `${ bookName }.json`;
 
 function parseAndWriteChunks(inputFile, outputFile) {
     fs.readFile(inputFile, 'utf8', (err, data) => {

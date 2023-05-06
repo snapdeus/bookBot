@@ -1,6 +1,6 @@
 require('dotenv').config();
 const { QuickDB } = require("quick.db");
-const book = require('../output.json');
+
 const initialDB = new QuickDB({ filePath: `./json.sqlite` });
 let config;
 if (process.env.NODE_ENV?.trim() === 'development') {
@@ -8,6 +8,7 @@ if (process.env.NODE_ENV?.trim() === 'development') {
 } else {
     config = require('../config/config.json');
 }
+
 
 
 async function createThread(channel, bookName) {
@@ -29,6 +30,8 @@ async function createThread(channel, bookName) {
 module.exports.sendChapters = async (channel, bookName) => {
     try {
         const db = initialDB.table(`${ bookName }`)
+        const book = require(`../${ bookName }.json`);
+
 
         const thread = await createThread(channel, bookName);
 

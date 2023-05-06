@@ -50,7 +50,7 @@ client.on('ready', () => {
     const channel = client.channels.cache.get(config.BOOK_CHANNEL);
 
     // sendChapters(channel, config.CLOUDSPLITTER)
-
+    sendChapters(channel, config.CLOUDSPLITTER);
     cron.schedule('30 19 * * *', () => {
         sendChapters(channel, config.CLOUDSPLITTER);
     });
