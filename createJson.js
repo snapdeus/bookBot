@@ -6,7 +6,8 @@ if (process.env.NODE_ENV?.trim() === 'development') {
     config = require('./config/config.json');
 }
 
-const bookName = config.CLOUDSPLITTER
+const bookName = config.KISS;
+console.log(config);
 
 const infile = `${ bookName }.txt`;
 const outfile = `${ bookName }.json`;

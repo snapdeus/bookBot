@@ -1,4 +1,4 @@
-const text = require('./output.json');
+// const text = require('./kiss.json');
 
 
-console.log(text.length);
+// console.log(text.length);
