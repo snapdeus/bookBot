@@ -6,7 +6,7 @@ if (process.env.NODE_ENV?.trim() === 'development') {
     config = require('./config/config.json');
 }
 
-const bookName = config.BLINDSIGHT;
+const bookName = config.REDDENING;
 
 
 const infile = `${ bookName }.txt`;
@@ -48,6 +48,11 @@ function parseAndWriteChunks(inputFile, outputFile) {
             console.log(`File "${ outputFile }" written successfully.`);
         });
     });
+    fs.appendFile('.gitignore', `\n${ outfile }\n${ infile }`, function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+    });
 }
 
 parseAndWriteChunks(infile, outfile);
+

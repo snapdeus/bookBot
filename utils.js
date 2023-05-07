@@ -1,4 +1,4 @@
-// const text = require('./blindsight.json');
+const text = require('./reddening.json');
 
 
-// console.log(text.length);
+console.log(text.length);
