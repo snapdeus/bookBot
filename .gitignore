@@ -1,14 +1,6 @@
 .env
 node_modules/
 config/
-cloudsplitter.txt
-output.txt
-output.json
+books/
+
 json.sqlite
-cloudsplitter.json
-kiss.txt
-kiss.json
-blindsight.txt
-blindsight.json
-reddening.json
-reddening.txt

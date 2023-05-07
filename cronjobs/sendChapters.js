@@ -20,17 +20,17 @@ async function createThread(channel, bookName) {
         });
 
         console.log(`Created thread: ${ thread.name }`);
-        return thread
+        return thread;
     } else {
-        const thread = channel.threads.cache.find(x => x.name === bookName)
-        return thread
+        const thread = channel.threads.cache.find(x => x.name === bookName);
+        return thread;
     }
 }
 
 module.exports.sendChapters = async (channel, bookName) => {
     try {
-        const db = initialDB.table(`${ bookName }`)
-        const book = require(`../${ bookName }.json`);
+        const db = initialDB.table(`${ bookName }`);
+        const book = require(`../books/${ bookName }.json`);
 
 
         const thread = await createThread(channel, bookName);

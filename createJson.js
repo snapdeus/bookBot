@@ -9,8 +9,8 @@ if (process.env.NODE_ENV?.trim() === 'development') {
 const bookName = config.REDDENING;
 
 
-const infile = `${ bookName }.txt`;
-const outfile = `${ bookName }.json`;
+const infile = `./books/${ bookName }.txt`;
+const outfile = `./books/${ bookName }.json`;
 
 function parseAndWriteChunks(inputFile, outputFile) {
     fs.readFile(inputFile, 'utf8', (err, data) => {
