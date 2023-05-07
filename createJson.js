@@ -6,8 +6,8 @@ if (process.env.NODE_ENV?.trim() === 'development') {
     config = require('./config/config.json');
 }
 
-const bookName = config.KISS;
-console.log(config);
+const bookName = config.BLINDSIGHT;
+
 
 const infile = `${ bookName }.txt`;
 const outfile = `${ bookName }.json`;
@@ -26,7 +26,7 @@ function parseAndWriteChunks(inputFile, outputFile) {
         for (const sentence of sentences) {
             const potentialChunk = currentChunk + sentence;
 
-            if (potentialChunk.length <= 1900) {
+            if (potentialChunk.length <= 1850) {
                 currentChunk = potentialChunk;
             } else {
                 chunks.push(currentChunk);

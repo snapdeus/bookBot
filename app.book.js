@@ -56,7 +56,10 @@ client.on('ready', () => {
     cron.schedule('45 18 * * *', () => {
         sendChapters(channel, config.KISS);
     });
-
+    sendChapters(channel, config.BLINDSIGHT);
+    cron.schedule('* * * * *', () => {
+        sendChapters(channel, config.BLINDSIGHT);
+    });
 
 
 
