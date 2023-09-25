@@ -6,7 +6,7 @@ if (process.env.NODE_ENV?.trim() === 'development') {
     config = require('./config/config.json');
 }
 
-const bookName = config.REDDENING;
+const bookName = config.LOVECRAFT;
 
 
 const infile = `./books/${ bookName }.txt`;
@@ -26,7 +26,7 @@ function parseAndWriteChunks(inputFile, outputFile) {
         for (const sentence of sentences) {
             const potentialChunk = currentChunk + sentence;
 
-            if (potentialChunk.length <= 1850) {
+            if (potentialChunk.length <= 1840) {
                 currentChunk = potentialChunk;
             } else {
                 chunks.push(currentChunk);
@@ -48,6 +48,8 @@ function parseAndWriteChunks(inputFile, outputFile) {
             console.log(`File "${ outputFile }" written successfully.`);
         });
     });
+
+    //nifty trick to add to .gitignore ;]
     fs.appendFile('.gitignore', `\n${ outfile }\n${ infile }`, function (err) {
         if (err) throw err;
         console.log('Saved!');

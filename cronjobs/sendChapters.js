@@ -35,6 +35,7 @@ module.exports.sendChapters = async (channel, bookName) => {
 
         const thread = await createThread(channel, bookName);
 
+        console.log(book.length);
 
         if (!(await db.has('startingIndex'))) {
             await db.set('startingIndex', 0);
@@ -46,7 +47,7 @@ module.exports.sendChapters = async (channel, bookName) => {
 
         let lastMessageId = await db.get('lastMessageId');
         if (lastMessageId) {
-            thread.send(`**LAST BOOKMARK:**\n https://discord.com/channels/${ config.GUILD_ID }/${ thread.id }/${ lastMessageId }\n *NOW READING PART ${ startingIndex / 5 }/172*`);
+            thread.send(`**LAST BOOKMARK:**\n https://discord.com/channels/${ config.GUILD_ID }/${ thread.id }/${ lastMessageId }\n *NOW READING PART ${ startingIndex / 5 }/${ book.length / 5 }*`);
         } else {
             //NOTE NEED TO FIX: BOOK.LENGTH WILL NOT ALWAYS BE DIVISIBLE BY 5
             thread.send(`Now reading part ${ startingIndex / 5 }/${ book.length / 5 }`);

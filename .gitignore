@@ -1,6 +1,9 @@
 .env
 node_modules/
-config/
+config.test.json
 books/
 
 json.sqlite
+
+./books/lovecraft.json
+./books/lovecraft.txt

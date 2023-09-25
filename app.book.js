@@ -53,9 +53,11 @@ client.on('ready', () => {
         sendChapters(channel, config.CLOUDSPLITTER);
     });
 
-    // cron.schedule('45 18 * * *', () => {
-    //     sendChapters(channel, config.KISS);
-    // });
+    sendChapters(channel, config.LOVECRAFT);
+
+    cron.schedule('45 18 * * *', () => {
+        sendChapters(channel, config.LOVECRAFT);
+    });
 
     // cron.schedule('30 1 * * *', () => {
     //     sendChapters(channel, config.BLINDSIGHT);
