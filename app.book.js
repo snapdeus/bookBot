@@ -53,7 +53,7 @@ client.on('ready', () => {
         sendChapters(channel, config.CLOUDSPLITTER);
     });
 
-    sendChapters(channel, config.LOVECRAFT);
+
 
     cron.schedule('45 18 * * *', () => {
         sendChapters(channel, config.LOVECRAFT);
