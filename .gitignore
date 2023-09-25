@@ -1,6 +1,8 @@
 .env
 node_modules/
-/config
+config/
+config.json
+config.test.json
 books/
 
 json.sqlite
