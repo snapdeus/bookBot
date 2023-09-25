@@ -31,7 +31,7 @@ module.exports.sendChapters = async (channel, bookName) => {
     try {
         const db = initialDB.table(`${ bookName }`);
         const book = require(`../books/${ bookName }.json`);
-
+        console.log(bookName);
 
         const thread = await createThread(channel, bookName);
 
