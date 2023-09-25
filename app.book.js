@@ -53,17 +53,17 @@ client.on('ready', () => {
         sendChapters(channel, config.CLOUDSPLITTER);
     });
 
-    cron.schedule('45 18 * * *', () => {
-        sendChapters(channel, config.KISS);
-    });
+    // cron.schedule('45 18 * * *', () => {
+    //     sendChapters(channel, config.KISS);
+    // });
 
-    cron.schedule('30 1 * * *', () => {
-        sendChapters(channel, config.BLINDSIGHT);
-    });
+    // cron.schedule('30 1 * * *', () => {
+    //     sendChapters(channel, config.BLINDSIGHT);
+    // });
 
-    cron.schedule('45 1 * * *', () => {
-        sendChapters(channel, config.REDDENING);
-    });
+    // cron.schedule('45 1 * * *', () => {
+    //     sendChapters(channel, config.REDDENING);
+    // });
 
 
 
